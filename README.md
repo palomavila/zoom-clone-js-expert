@@ -7,8 +7,8 @@ Este é um Projeto base da Semana JavaScript Expert realizada de 25 a 29 de jane
 
 Este projeto possui algumas referências as quais irei citar abaixo:
 - Criador da Semana Js Expert [Erick Wendel](https://github.com/erickwendel).
-- Layout da home baseada no codepen do [Nelson Adonis Hernandez] (https://codepen.io/nelsonher019/pen/eYZBqOm).
-- Layout da room adaptado do repositório do canal [CleverProgrammers] (https://github.com/CleverProgrammers/nodejs-zoom-clone/blob/master/views/room.ejs).
+- Layout da home baseada no codepen do [Nelson Adonis Hernandez](https://codepen.io/nelsonher019/pen/eYZBqOm).
+- Layout da room adaptado do repositório do canal [CleverProgrammers](https://github.com/CleverProgrammers/nodejs-zoom-clone/blob/master/views/room.ejs).
 
 ## 👩🏽‍💻Licença:
 
