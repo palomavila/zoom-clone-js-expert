@@ -4,16 +4,10 @@ class Business {
     this.room = room;
     this.view = view;
 
-    this.socketBuilder = socketBuilder
-      .setOnUserConnected(this.onUserConnected())
-      .setOnUserDisconnected(this.onUserDisconnected())
-      .build();
-
+    
     this.socketBuilder.emit('join-room', this.room, 'teste01');
-
-   
-    //mostra câmera na tela
     this.currentStream = {};
+    this.socket = {};
   }
 
   //protege a classe de alterações
@@ -22,6 +16,11 @@ class Business {
     return instance._init();
   }
   async _init() {
+      this.socket = this.socketBuilder
+      .setOnUserConnected(this.onUserConnected())
+      .setOnUserDisconnected(this.onUserDisconnected())
+      .build();
+
     this.currentStream = await this.media.getCamera();
     this.addVideoStream('teste01');
   }
