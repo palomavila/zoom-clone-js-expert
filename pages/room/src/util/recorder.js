@@ -22,7 +22,7 @@ class Recorder {
     }
     startRecording() {
         const options = this._setup()
-        // Se não tiver recebendo stream
+
         if (!this.stream.active) return;
         this.mediaRecorder = new MediaRecorder(this.stream, options)
         console.log(`Created MediaRecorder ${this.mediaRecorder} with options ${options}`)
