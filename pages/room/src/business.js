@@ -88,6 +88,37 @@ class Business {
             this.peers.set(callerId, { call })
             
             this.view.setParticipants(this.peers.size)
+      
+          
+    onPeerCallClose() {
+        return call => {
+            console.log('Call CLosed', call)
+        }
+    }
+
+    onRecordPressed(recordingEnabled) {
+        this.recordingEnabled = recordingEnabled
+        for (const [key, value] of this.userRecordings) {
+            if (this.recordingEnabled) {
+                value.startRecording()
+                continue;
+            }
+            this.stopRecording(key)
+        }
+
+    }
+
+    async stopRecording(userId) {
+        const userRecordings = this.userRecordings
+        for (const [key, value] of userRecordings) {
+            const isContextUser = key.includes(userId)
+            if (!isContextUser) continue;
+
+            const rec = value;
+            const isRecordingActive = rec.recordingActive
+            if (!isRecordingActive) continue;
+
+            await rec.stopRecording()
         }
     }
 }
