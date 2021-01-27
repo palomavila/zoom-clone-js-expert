@@ -47,7 +47,9 @@ class Recorder {
         if (!this.recordingActive) return;
         if (this.mediaRecorder.state === 'inactive') return;
 
+        console.log(`Media Recorder stopped!`, this.userName)  
         this.mediaRecorder.stop()
+   
         this.recordingActive = false
         await Util.sleep(200)
         this.completeRecordings.push([...this.recorderBlobs])
