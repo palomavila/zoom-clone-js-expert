@@ -47,7 +47,7 @@ class Recorder {
         if (!this.recordingActive) return;
         if (this.mediaRecorder.state === 'inactive') return;
 
-        console.log(`Media Recorder stopped!`, this.userName)  
+        console.log('`media recorder stopped!`, this.userName)  
         this.mediaRecorder.stop()
    
         this.recordingActive = false
