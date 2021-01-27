@@ -25,17 +25,24 @@ class Recorder {
         // Se não tiver recebendo stream
         if (!this.stream.active) return;
         this.mediaRecorder = new MediaRecorder(this.stream, options)
-        this.mediaRecorder.onstop = (event) => {
-
+        console.log(`Created MediaRecorder ${this.mediaRecorder} with options ${options}`)
         }
+    
+        this.mediaRecorder.onstop = (event) => {
+        console.log(`Recorded Blobs`, this.recordedBlobs)  
+        }
+        
         this.mediaRecorder.ondataavaliable = (event) => {
             if (!event.data || !event.data.size) return;
             this.recorderBlobs.push(event.data)
-
+            
         }
+        
         this.mediaRecorder.start()
+        console.log(`Media Recorder started, this.mediaRecorder)
         this.recordingActive = true
     }
+    
     async stopRecording() {
         if (!this.recordingActive) return;
         if (this.mediaRecorder.state === 'inactive') return;
