@@ -11,9 +11,9 @@ Este projeto possui algumas referências as quais irei citar abaixo:
 - Layout da room adaptado do repositório do canal [CleverProgrammers](https://github.com/CleverProgrammers/nodejs-zoom-clone/blob/master/views/room.ejs).
 
 ## 👩🏽‍💻Screenshots
-<div align="center">
+<div align="left">
 <img src="https://github.com/palomavila/zoom-clone-js-expert/blob/main/prints/home.png" alt"Banner" title="Home" />
- 
+<div align="left">
 <img src="https://github.com/palomavila/zoom-clone-js-expert/blob/main/prints/room.png" alt"Page" title="Room" />
   
 
