@@ -2,10 +2,8 @@ class View {
     constructor() {
          this.recorderBtn = document.getElementById('record')
          this.leaveBtn = document.getElementById('leave')
-
     }
    
-
     createVideoElement({ muted = true, src, srcObject }) {
         const video = document.createElement('video')
         video.muted = muted
