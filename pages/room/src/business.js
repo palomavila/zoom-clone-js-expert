@@ -35,13 +35,17 @@ class Business {
     }
 
     addVideoStream(userId, stream = this.currentStream) {
-        const recorderInstance = new Recorder(userId, stream)
-        this.userRecordings.set(recorderInstance.fileName, recorderInstance)
-        if (this.recordingEnabled) {
+        const recorderInstance = new Recorder(userId,stream)
+        this.usersRecordings.set(recorderInstance.filename,recorderInstance)
+        if(this.recordingEnabled){
             recorderInstance.startRecording()
         }
-        const isCurrentId = false;
-        this.view.renderVideo({ userId, muted: false, stream, isCurrentId })
+        const isCurrentId = userId === this.currentPeer.id
+        this.view.renderVideo({
+            userId,
+            stream,
+            isCurrentId,
+        })
     }
 
     onUserConnected() {
