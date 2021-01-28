@@ -58,6 +58,7 @@ class Business {
                 this.peers.delete(userId)
             }
             this.view.setParticipants(this.peers.size)
+            this.stopRecording(userId)
             this.view.removeVideoElement(userId)
         };
     }
