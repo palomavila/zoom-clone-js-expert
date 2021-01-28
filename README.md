@@ -10,6 +10,12 @@ Este projeto possui algumas referências as quais irei citar abaixo:
 - Layout da home baseada no codepen do [Nelson Adonis Hernandez](https://codepen.io/nelsonher019/pen/eYZBqOm).
 - Layout da room adaptado do repositório do canal [CleverProgrammers](https://github.com/CleverProgrammers/nodejs-zoom-clone/blob/master/views/room.ejs).
 
+## 👩🏽‍💻Screenshots
+  <img src="https://github.com/palomavila/zoom-clone-js-expert/blob/main/prints/home.png" alt"Banner" title="Home" />
+ 
+  <img src="https://github.com/palomavila/zoom-clone-js-expert/blob/main/prints/room.png" alt"Page" title="Room" />
+  
+
 ## 👩🏽‍💻Licença:
 
 <li><a href="https://github.com/palomavila/zoom-clone-js-expert/blob/main/LICENSE">Clique Aqui</a></li>
