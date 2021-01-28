@@ -118,17 +118,29 @@ class Business {
 
     }
 
-    async stopRecording(userId) {
-        const userRecordings = this.userRecordings
-        for (const [key, value] of userRecordings) {
+ 
+   async stopRecording(userId){
+        const usersRecordings =this.usersRecordings
+        for(const [key,value] of usersRecordings){
             const isContextUser = key.includes(userId)
-            if (!isContextUser) continue;
-
-            const rec = value;
+            if(!isContextUser) continue
+            const rec = value
             const isRecordingActive = rec.recordingActive
-            if (!isRecordingActive) continue;
-
+            if(!isRecordingActive)continue
             await rec.stopRecording()
+            this.playRecordings(key)
         }
+    }
+
+    playRecordings(userId){
+        const user = this.usersRecordings.get(userId)
+        const videosURLs = user.getAllVideoURLs()
+        videosURLs.map(url => {
+            this.view.renderVideo({url,userId})
+        })
+    }
+
+    onLeavePressed(){
+        this.usersRecordings.forEach((value,key) => value.download())
     }
 }
