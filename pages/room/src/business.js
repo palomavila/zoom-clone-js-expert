@@ -87,12 +87,16 @@ class Business {
             call.answer(this.currentStream)
         };
     }
-
-    onPeerStreamReceived() {
-        return (call, stream) => {
-            const callerId = call.peer;
-            this.addVideoStream(callerId, stream)
-            this.peers.set(callerId, { call })
+    
+    onPeerStreamReceived (){
+        return (call,stream) => {
+            const callerId = call.peer
+            if(this.peers.has(callerId)){
+                console.log('calling twice, ignored second call', callerId)
+                return;
+            }
+            this.addVideoStream(callerId,stream)
+            this.peers.set(callerId,{call})
             this.view.setParticipants(this.peers.size)
         };
     }
